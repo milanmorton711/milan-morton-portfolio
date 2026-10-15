@@ -1,8 +1,16 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/milanmorton711", label: "GitHub" },
-  { icon: FaLinkedin, href: "https://linkedin.com/in/your-profile", label: "LinkedIn" },
+  {
+    icon: FaGithub,
+    href: "https://github.com/milanmorton711",
+    label: "GitHub",
+  },
+  {
+    icon: FaLinkedin,
+    href: "https://linkedin.com/in/your-profile",
+    label: "LinkedIn",
+  },
 ];
 
 const footerLinks = [
@@ -29,8 +37,8 @@ export const Footer = () => {
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link) => (
-              
-                <a key={link.href}
+              <a
+                key={link.href}
                 href={link.href}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -41,8 +49,8 @@ export const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
-              
-                <a key={social.label}
+              <a
+                key={social.label}
                 href={social.href}
                 aria-label={social.label}
                 className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"

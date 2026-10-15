@@ -1,95 +1,92 @@
 @import "tailwindcss";
 
 @theme {
-     --color-background: #010f1a;
-    --color-foreground: #f7f7f7;
+  --color-background: #010f1a;
+  --color-foreground: #f7f7f7;
 
-    --color-card: #0a1826;
+  --color-card: #0a1826;
 
-    --color-primary: #4d9fe0;
-    --color-primary-foreground: #010f1a;
+  --color-primary: #4d9fe0;
+  --color-primary-foreground: #010f1a;
 
-    --color-secondary: #16324a;
-    --color-secondary-foreground: #cfe6ff;
+  --color-secondary: #16324a;
+  --color-secondary-foreground: #cfe6ff;
 
-    --color-muted: #6b7d8f;
-    --color-muted-foreground: #a8b7c4;
-    
-    --radius: 0.75rem;
+  --color-muted: #6b7d8f;
+  --color-muted-foreground: #a8b7c4;
 
-    --color-highlight: #E0DB24;
-    --color-surface: #0d1e2e;
-     --color-border: #16324a;
+  --radius: 0.75rem;
+
+  --color-highlight: #e0db24;
+  --color-surface: #07121d;
+  --color-border: #16324a;
 }
 
 @layer base {
-    html {
-        scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    body {
-        background-color: var(--color-background);
-        color: var(--color-foreground);
-        font-family: "Inter", sans-serif;
-    }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+  }
 
-    .font-serif {
-        font-family: "Playfair Display", serif;
-    }
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
 }
-
 
 @layer components {
-    .glass {
-       background-color: color-mix(in srgb, var(--color-surface) 50%, transparent); 
-       backdrop-filter: blur(16px);
-       border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-    }
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
 
-    .glass-strong {
-       background-color: color-mix(in srgb, var(--color-surface) 80%, transparent); 
-       backdrop-filter: blur(24px);
-       border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
-    }
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 98%, transparent);
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+  }
 
-    .glow-text {
-       text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
-}
+  .glow-text {
+    text-shadow: 0 0 30px
+      color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
 
-    .glow-border {
-        box-shadow: 
-        0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
-        inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
-    }
+  .glow-border {
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
 }
 
 @layer utilities {
-
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-            filter: blur(10px)
-        }
-        to{
-            opacity: .8;
-            transform: translateY(0);
-            filter: blur(0)
-        }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
     }
-
-     @keyframes fade-in-simple {
-        from {
-            opacity: 0;
-            
-        }
-        to {
-            opacity: .9;
-           
-        }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
     }
+  }
 
-     @keyframes float {
+  @keyframes fade-in-simple {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes float {
     0%,
     100% {
       transform: translateY(0);
@@ -108,15 +105,15 @@
     }
   }
 
-    .animate-fade-in {
-      animation: fade-in 0.8s ease-out both;
-    }
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
 
-    .animate-fade-in-simple {
-      animation: fade-in-simple 0.8s ease-out both;
-    }
+  .animate-fade-in-simple {
+    animation: fade-in-simple 0.8s ease-out both;
+  }
 
-    .animate-float {
+  .animate-float {
     animation: float 4s ease-in-out infinite;
   }
 
@@ -124,7 +121,7 @@
     animation: marquee 30s linear infinite;
   }
 
-      .animation-delay-100 {
+  .animation-delay-100 {
     animation-delay: 100ms;
   }
 
